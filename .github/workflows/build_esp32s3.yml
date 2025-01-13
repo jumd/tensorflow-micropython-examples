@@ -17,7 +17,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout
       - name: Prepare to Build Tensorflow Micropython Firmware for ESP32
         run: |
           git submodule init
@@ -53,7 +53,7 @@ jobs:
           source ./micropython/tools/ci.sh && ci_esp32_idf44_setup
       - name: Cache tflm
         id: cache-tflm
-        uses: actions/cache@v2
+        uses: actions/cache
         env:
           cache-name: cache-tflm
         with:
@@ -98,7 +98,7 @@ jobs:
           ../../../micropython/ports/esp32
 
       - name: Archive ESP32-MICROLITE_S3 firmware
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact
         with:
           name: microlite-esp32s3-firmware
           path: |
@@ -120,7 +120,7 @@ jobs:
           ../../../micropython/ports/esp32
 
       - name: Archive ESP32-MICROLITE_S3_SPIRAM firmware
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact
         with:
           name: microlite-esp32s3-spiram-firmware
           path: |
@@ -142,7 +142,7 @@ jobs:
           ../../../micropython/ports/esp32
 
       - name: Archive ESP32-MICROLITE_S3_SPIRAM_CS_GPIO_20 firmware
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact
         with:
           name: microlite-esp32-s3-spiram-cs-gpio-20-firmware
           path: |
@@ -164,7 +164,7 @@ jobs:
           ../../../micropython/ports/esp32
 
       - name: Archive ESP32-MICROLITE_S3_SPIRAM_OCTAL firmware
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact
         with:
           name:  microlite-esp32-s3-spiram-octal-firmware
           path: |
